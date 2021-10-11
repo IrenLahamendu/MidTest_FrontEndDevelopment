@@ -1,0 +1,13 @@
+.div1 {
+    -webkit-column-count: 500px;
+    -moz-column-count: 500px;
+     column-count: 500px;
+}
+
+.last {
+    text-align: center;
+}
+
+#last2 {
+    padding-top: 15px;
+}

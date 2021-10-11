@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d3a675c58c.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" >Student Management MiniApp</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+      </nav>
+      <div class="container-sm">
+    <h1>Student Management</h1>
+    <h1>MiniApp</h1>
+    <hr/>
+    <div class="row">
+        <div class="col-7">
+            <div>
+              <h4>Add Student</h4>
+              <br/>
+            
+              <button onclick="toggle()" class="btn btn-secondary">Show Form Add New Student</button>
+              <form id="student-form" name="formAddStudent" action="daftar.php" method="post">
+                <div id="div1">
+                <div class="mb-3">
+                  <label for="InputNIM" class="form-label" id="nim">Student ID (NIM)</label>
+                  <input type="NIM" class="form-control" name="nim" id="InputNIM" placeholder="102088542011" required>
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="InputName" class="form-label" id="name">Full Name</label>
+                  <input type="Name" class="form-control" name="name" id="InputName" placeholder="Selena Gomez">
+                </div>
+                <div class="mb-3">
+                  <label for="InputName" class="form-label" id="gender" name="gender">Gender</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Male
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Female
+                    </label>
+                  </div>
+                  <div>
+                    <label for="InputFaculty" class="form-label" name="faculty" >Faculty</label>
+                    <select class="form-select" id="faculty" aria-label="Default select example">
+                        <option selected>--SELECT FACULTY--</option>
+                        <option value="1">Pascasarjana</option>
+                        <option value="2">Fakultas Filsafat</option>
+                        <option value="3">Fakultas Keguruan dan Ilmu Pendidikan</option>
+                        <option value="4">Fakultas Ekonomi dan Bisnis</option>
+                        <option value="5">Fakultas Pertanian</option>
+                        <option value="6">Fakultas Ilmu Komputer</option>
+                        <option value="7">Fakultas Keperawatan</option>
+                        <option value="8">Akademik Sekretari Manajemen Indonesia Klabat</option>
+                      </select>
+                  </div>
+                </div>
+                <div>
+                    <label for="InputProdi" class="form-label" name="prodi" id="prodi">Program Of Study</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>--SELECT PROGRAM OF STUDY--</option>
+                        <option value="1">Pascasarjana</option>
+                        <option value="2">Fakultas Filsafat</option>
+                        <option value="3">Fakultas Keguruan dan Ilmu Pendidikan</option>
+                        <option value="4">Fakultas Ekonomi dan Bisnis</option>
+                        <option value="5">Fakultas Pertanian</option>
+                        <option value="6">Fakultas Ilmu Komputer</option>
+                        <option value="7">Fakultas Keperawatan</option>
+                        <option value="8">Akademik Sekretari Manajemen Indonesia Klabat</option>
+                      </select>
+                </div>
+                <br/>
+                <div class="d-grid gap-2">
+                  <button  class="btn btn-secondary" type="submit" value="Add Student">Add Student</button>
+                </div>
+                </div>
+              </form>
+            </div>    
+            </div>
+          
+        <div class="col-5" id="col2">
+            <h4>Filter Student By</h4>
+            <div>
+              <label for="InputFaculty" class="form-label" name="faculty" id="faculty">Faculty</label>
+              <select class="form-select" aria-label="Default select example">
+                  <option selected>--SELECT FACULTY--</option>
+                  <option value="1">Pascasarjana</option>
+                  <option value="2">Fakultas Filsafat</option>
+                  <option value="3">Fakultas Keguruan dan Ilmu Pendidikan</option>
+                  <option value="4">Fakultas Ekonomi dan Bisnis</option>
+                  <option value="5">Fakultas Pertanian</option>
+                  <option value="6">Fakultas Ilmu Komputer</option>
+                  <option value="7">Fakultas Keperawatan</option>
+                  <option value="8">Akademik Sekretari Manajemen Indonesia Klabat</option>
+                </select>
+            </div>
+            <br/>
+            <div class="d-grid gap-2">
+            <button class="btn btn-secondary">Show Student</button>
+          </div>
+          <div>
+            <label for="InputFaculty" class="form-label" name="faculty" id="faculty">Program Of Study</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>--SELECT PROGRAM OF STUDY--</option>
+                <option value="1">Agreteknologi</option>
+                <option value="2">Ilmu Filsafat</option>
+                <option value="3">Informatika</option>
+                <option value="4">Keperawatan</option>
+                <option value="5">Magister Manajemen</option>
+                <option value="6">Magister Teologi</option>
+                <option value="7">Manajemen</option>
+                <option value="8">Pendidikan Agama</option>
+                <option value="9">Pendidikan Bahasa Inggris</option>
+                <option value="10">Pendidikan Ekonomi</option>
+                <option value="11">Pendidikan Luar Sekolah</option>
+                <option value="12">Profesi Ners</option>
+                <option value="13">Sekretari D3</option>
+                <option value="14">Sistem Informasi</option>
+              </select>
+              <br/>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-secondary">Show Student</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    
+    
+   
+    <hr/>
+    <center>
+        <h1>Our Student</h1>
+    </center>
+    <br/>
+    
+    <input id="search" type="text" class="form-control" name="search" placeholder="Search student by name...">
+    <br/>
+    <table id="info" id="tabelinput">
+        <tr >
+            <th width="200">Student ID (NIM)</th>
+            <th width="200">Full Name</th>
+            <th width="200">Gender</th>
+            <th width="200">Faculty</th>
+            <th width="200">Program of Study</th>
+            <th width="200">Action</th>
+        </tr>
+        <tr >
+          <td>10501210004</td>
+          <td>Irene Lahamendu</td>
+          <td>Female</td>
+          <td>Ilmu Komputer</td>
+          <td>Sistem Informasi</td>
+          <td><i class="fas fa-user-minus"></i></td>
+        </tr>
+        <br/>
+        <tr >
+            <td class="list-item"></td>
+            <td class="list-item"></td>
+            <td class="list-item"></td>
+            <td class="list-item"></td>
+            <td class="list-item"></td>
+            <td class="list-item"><i class="fas fa-user-minus"></i></td>
+        </tr>
+    </table>
+  </div>
+  <br/>
+  <br/>
+  <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+    <div class="container-fluid">
+      <div class="last">
+        <a class="navbar-brand">Made With</a> <i class="fab fa-js"></i>
+      </div>
+    <script src="index.js"></script>
+    </div>
+</body>
+</html>
